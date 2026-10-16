@@ -124,10 +124,13 @@ npx gh-pages -d dist`;
             </div>
             <div>
               <h4 className="font-bold text-emerald-300 text-xs sm:text-sm mb-1">
-                Already Pre-Configured for GitHub Pages!
+                Why "404 /src/main.tsx" Happens &amp; How to Fix It
               </h4>
+              <p className="text-xs text-zinc-300 leading-relaxed mb-2">
+                If you saw <code className="text-red-400 font-mono">GET /src/main.tsx 404</code>, it's because GitHub Pages is set to serve raw source files from your repository root instead of the compiled <code className="text-amber-300 font-mono">dist</code> folder! Browsers cannot execute raw <code className="text-zinc-200 font-mono">.tsx</code> files.
+              </p>
               <p className="text-xs text-zinc-300 leading-relaxed">
-                We have already set <code className="bg-black/60 px-1.5 py-0.5 rounded text-amber-300 font-mono">base: './'</code> in <code className="text-zinc-200">vite.config.ts</code> so all your scripts, styles, fonts, and assets will load properly without 404 errors regardless of whether you host at the root domain or a repo subfolder path!
+                <strong>Solution:</strong> In your GitHub repo, go to <strong>Settings ➔ Pages ➔ Source</strong> and change it to <strong>"GitHub Actions"</strong> (Option 1) or run <code className="text-amber-300 font-mono">npm run deploy</code> (Option 2).
               </p>
             </div>
           </div>
